@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f8f5">
+  <title>{% block title %}PocketSmart AI{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+  <script defer src="{{ url_for('static', path='/js/app.js') }}"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="PocketSmart AI home"><span class="brand-mark">P</span><span>PocketSmart <b>AI</b></span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/home-planner">Home</a><a href="/party-planner">Party</a><a href="/jewelry-planner">Jewelry</a>
+      {% if user %}<a href="/dashboard">Dashboard</a><a href="/history">History</a><a class="nav-quiet" href="/logout">Log out</a>
+      {% else %}<a class="nav-quiet" href="/login">Log in</a><a class="button button-small" href="/register">Create account</a>{% endif %}
+    </nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer class="site-footer"><a class="brand" href="/"><span class="brand-mark">P</span><span>PocketSmart <b>AI</b></span></a><p>Thoughtful plans. Clear budgets.</p><small>Local catalog estimates only. Confirm prices and availability with providers.</small></footer>
+</body>
+</html>

@@ -1,0 +1,1 @@
+"""Application services for AI calls and local recommendation catalogs."""
